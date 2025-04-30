@@ -268,7 +268,7 @@ const Main: FC<IMainProps> = () => {
       id: `${Date.now()}`,
       content: calculatedIntroduction,
       isAnswer: true,
-      feedbackDisabled: true,
+      feedbackDisabled: false,
       isOpeningStatement: isShowPrompt,
     };
     if (calculatedIntroduction) return [openStatement];

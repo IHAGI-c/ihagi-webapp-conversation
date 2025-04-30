@@ -38,6 +38,41 @@ const translation = {
     pasteFileLinkInvalid: '유효하지 않은 파일 링크',
     fileExtensionNotSupport: '지원하지 않는 파일 확장자',
   },
+  privacy: {
+    title: '개인정보 처리방침',
+    lastUpdated: '최종 업데이트: 2025년 4월 30일',
+    sections: {
+      introduction: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ipsum asperiores amet mollitia architecto consequatur libero veritatis praesentium repudiandae excepturi animi ab laudantium recusandae, consequuntur veniam.',
+      purpose: {
+        title: '1. 개인정보의 처리 목적',
+        content: 'Exercitationem, perferendis quasi autem laudantium odio fuga aspernatur cupiditate rem fugiat, placeat eum aut? Dolorem deserunt explicabo est error ducimus et harum! Inventore reprehenderit dolore nihil cum rem perspiciatis quae dicta eaque amet laudantium eos, excepturi tempora mollitia labore numquam est consequuntur sapiente aliquid ut et saepe distinctio odio!'
+      },
+      retention: {
+        title: '2. 개인정보의 처리 및 보유 기간',
+        content: 'Id a sed deserunt? Reiciendis sunt reprehenderit quod tempore alias, quia enim, autem, eveniet a placeat recusandae magni quam vel voluptatibus illo corporis quisquam repellat consequuntur! Vero illum repellat natus.'
+      },
+      rights: {
+        title: '3. 정보주체의 권리·의무 및 그 행사방법',
+        content: 'Quod quia, placeat reiciendis libero similique accusamus deserunt minus nulla eveniet itaque dignissimos nihil sint sapiente necessitatibus cumque ipsa incidunt numquam saepe ab, veritatis totam. Beatae et numquam non assumenda? Repudiandae, ad.'
+      },
+      items: {
+        title: '4. 처리하는 개인정보의 항목',
+        content: 'Reiciendis eum placeat repellat, atque distinctio maxime facere consequuntur deleniti dolorum tempore laudantium ipsa fugit quisquam quam totam eligendi id tempora dolorem autem nulla in ab voluptatibus obcaecati. Veniam quis optio laudantium reiciendis.'
+      },
+      disposal: {
+        title: '5. 개인정보의 파기',
+        content: 'Eaque odit placeat molestiae voluptates recusandae enim eveniet iure numquam reprehenderit labore. Repudiandae temporibus nam placeat eveniet vero quidem maiores repellat nulla incidunt assumenda impedit, iusto enim necessitatibus voluptates error corrupti tenetur numquam esse totam deserunt porro dicta.'
+      }
+    },
+    footer: {
+      contact: '본 개인정보 처리방침에 대해 문의사항이 있으시면',
+      email: 'privacy@example.com',
+      emailSuffix: '으로 연락해 주시기 바랍니다.'
+    }
+  },
+  default: {
+    backToHome: '홈으로 돌아가기',
+  },
 }
 
 export default translation

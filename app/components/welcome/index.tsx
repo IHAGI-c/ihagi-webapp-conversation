@@ -10,6 +10,7 @@ import type { AppInfo, PromptConfig } from '@/types/app'
 import Toast from '@/app/components/base/toast'
 import Select from '@/app/components/base/select'
 import { DEFAULT_VALUE_MAX_LEN } from '@/config'
+import PrivacyDialog from '../privacy'
 
 // regex to match the {{}} and replace it with a span
 const regex = /\{\{([^}]+)\}\}/g
@@ -41,6 +42,7 @@ const Welcome: FC<IWelcomeProps> = ({
   const { t } = useTranslation()
   const hasVar = promptConfig.prompt_variables.length > 0
   const [isFold, setIsFold] = useState<boolean>(true)
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState<boolean>(false)
   const [inputs, setInputs] = useState<Record<string, any>>((() => {
     if (hasSetInputs)
       return savedInputs
@@ -341,6 +343,27 @@ const Welcome: FC<IWelcomeProps> = ({
       </div>)
   }
 
+  const renderFooter = () => {
+    if (hasSetInputs) return null
+
+    return (
+      <div className='mt-4 flex justify-between items-center h-8 text-xs text-gray-400'>
+        {siteInfo.privacy_policy
+          ? <div>{t('app.chat.privacyPolicyLeft')}
+            <button
+              className='text-gray-500 hover:underline'
+              onClick={() => setIsPrivacyOpen(true)}
+            >
+              {t('app.chat.privacyPolicyMiddle')}
+            </button>
+            {t('app.chat.privacyPolicyRight')}
+          </div>
+          : <div>
+          </div>}
+      </div>
+    )
+  }
+
   return (
     <div className='relative mobile:min-h-[48px] tablet:min-h-[64px]'>
       {hasSetInputs && renderHeader()}
@@ -364,21 +387,10 @@ const Welcome: FC<IWelcomeProps> = ({
         {hasSetInputs && renderHasSetInputs()}
 
         {/* foot */}
-        {!hasSetInputs && (
-          <div className='mt-4 flex justify-between items-center h-8 text-xs text-gray-400'>
+        {renderFooter()}
 
-            {siteInfo.privacy_policy
-              ? <div>{t('app.chat.privacyPolicyLeft')}
-                <a
-                  className='text-gray-500'
-                  href={siteInfo.privacy_policy}
-                  target='_blank'>{t('app.chat.privacyPolicyMiddle')}</a>
-                {t('app.chat.privacyPolicyRight')}
-              </div>
-              : <div>
-              </div>}
-          </div>
-        )}
+        {/* Privacy Dialog */}
+        <PrivacyDialog isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
       </div>
     </div >
   )
