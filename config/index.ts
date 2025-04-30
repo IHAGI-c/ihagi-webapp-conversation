@@ -8,6 +8,7 @@ export const APP_INFO: AppInfo = {
   copyright: "IHAGI",
   privacy_policy: "/privacy",
   default_language: "ko",
+  logoUrl: "/ihagi-logo.png",
 };
 
 export const isShowPrompt = false;
